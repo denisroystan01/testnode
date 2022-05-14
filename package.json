@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
     "start:dev": "nodemon --exec babel-node server/index.js"
   },
   "author": "Denis Roystan",
@@ -15,10 +14,12 @@
     "mongoose": "^6.3.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
     "@babel/core": "^7.17.10",
     "@babel/node": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "dotenv": "^16.0.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "rimraf": "^3.0.2"
   }
 }

@@ -1,5 +1,8 @@
-import express from 'express';
-import aws from 'aws-sdk';
+// import express from 'express';
+// import aws from 'aws-sdk';
+
+const express = require('express');
+const aws = require('aws-sdk');
 
 const app = express();
 
@@ -22,19 +25,6 @@ app.get('/getObjects',(req,res) => {
             }).promise();
 
             let arr = {}
-
-            // for (let obj of response.Contents) {
-            //     let prefix = prefix1 + "/" + prefix2 + "/" + " ";
-            //     let objectName = obj.Key.substring(prefix.length);
-            //     objectName = objectName.replace(/\.[^/.]+$/, "")
-
-            //     let json = await s3.getObject({
-            //         Bucket: "robbit-mf",
-            //         Key: obj.Key
-            //     }).promise();
-
-            //     arr[objectName] = JSON.parse(json.Body.toString('utf-8'))
-            // }
 
             await Promise.all(response.Contents.map(async (obj) => {
                 let prefix = prefix1 + "/" + prefix2 + "/" + " ";
